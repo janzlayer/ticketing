@@ -1,0 +1,78 @@
+{% extends "user-dashboard.html" %}
+
+{% block content %}
+<div class="tab-content">
+    <header class="tab-header">
+        <span class="v-line"></span>
+        <label class="header-text">Information Technology Section</label>
+    </header>
+    <div class="tabs">
+        <button id="create" class="btn"><i class="fa-solid fa-plus"></i>&nbsp;&nbsp;Create New</button>
+        <div id="forms" class="form-container" style="height: 0px">
+            <div class="form-holder">
+                <a class="btn btn-forms" data-modal-target="requisition-modal">Standard Requisition</a>
+                <a class="btn btn-forms" data-modal-target="special-modal">Special Request</a>
+                <a class="btn btn-forms" data-modal-target="issuance-modal">Equipment Issuance</a>
+                <a class="btn btn-forms" data-modal-target="borrow-modal">Borrow Equipment</a>
+                <a class="btn btn-forms" data-modal-target="incident-modal">Incident Report</a>
+            </div>
+        </div>
+    </div>
+    <div class="table-holder">
+        <table id="myTable">
+            <thead>
+                <tr>
+                    <th style="width: 20%">Reference No</th>
+                    <th style="width: 30%">Requester</th>
+                    <th style="width: 25%">Form</th>
+                    <th style="width: 15%">Date</th>
+                    <th style="width: 10%">Status</th>
+                </tr>
+            </thead>
+            <tbody>
+              
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div id="requisition-modal" class="modal">
+    <div class="modal-content">
+        
+        {% include 'modal/ict/requisition.html' %}
+        
+    </div>
+</div>
+
+<div id="special-modal" class="modal">
+    <div class="modal-content">
+       
+        {% include 'modal/ict/special.html' %}
+        
+    </div>
+</div>
+
+<div id="issuance-modal" class="modal">
+    <div class="modal-content">
+       
+        {% include 'modal/ict/issuance.html' %}
+        
+    </div>
+</div>
+
+<div id="incident-modal" class="modal">
+    <div class="modal-content">
+       
+        {% include 'modal/ict/incident.html' %}
+        
+    </div>
+</div>
+
+<div id="borrow-modal" class="modal">
+    <div class="modal-content">
+       
+        {% include 'modal/ict/borrow.html' %}
+        
+    </div>
+</div>
+{% endblock %}
