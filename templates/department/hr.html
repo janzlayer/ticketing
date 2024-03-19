@@ -1,0 +1,32 @@
+{% extends "user-dashboard.html" %}
+
+{% block content %}
+<div class="tab-content">
+    <header class="tab-header">
+        <span class="v-line"></span>
+        <label class="header-text">HR & Admin Deparment</label>
+    </header>
+    <div class="department-content">
+        {% block card %}
+        <div class="card-holder">         
+            <a href="/maintenance" class="card">
+                <i class="fa-solid fa-toolbox"></i>
+                <label>Work Order Request</label>
+            </a>
+            <a href="/vehicle" class="card">
+                <i class="fa-solid fa-van-shuttle"></i>
+                <label>Vehicle Request</label>
+            </a>
+            <a href="/room" class="card">
+                <i class="fa-solid fa-calendar-check"></i>
+                <label>Room Reservation</label>
+            </a>
+            <a href="/medicines" class="card">
+                <i class="fa-solid fa-house-medical"></i>
+                <label>Medicine</label>
+            </a>      
+        </div>
+        {% endblock %}
+    </div>
+</div>
+{% endblock %}

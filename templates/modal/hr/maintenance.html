@@ -1,0 +1,103 @@
+{% extends 'department/hr.html' %}
+
+{% block card %}
+<div class="tabs">
+    <button id="create-work" class="btn"><i class="fa-solid fa-plus"></i>&nbsp;&nbsp;Create New</button> 
+</div>
+<div class="table-holder">
+    <table id="myTable">
+        <thead>
+            <tr>
+                <th style="width: 20%">Reference No</th>
+                <th style="width: 30%">Requester</th>
+                <th style="width: 25%">Form</th>
+                <th style="width: 15%">Date</th>
+                <th style="width: 10%">Status</th>
+            </tr>
+        </thead>
+        <tbody>
+          
+        </tbody>
+    </table>
+</div>
+
+<div id="work-modal" class="modal">
+    <div class="modal-content">
+        <header class="tab-header">
+            <span class="v-line"></span>
+            <label class="header-text">Work Order Request</label>
+        </header>
+        <form>
+            <div class="grid-2-col">
+                <div>
+                    <div class="input-container">
+                        <label>Employee</label>
+                        <input class="input" type="text" value="{{ session['user']['n'] }}" readonly>
+                       
+                    </div>
+                    <div class="input-container">
+                        <label>Department / Section</label>
+                        <input class="input" type="text" value="{{ session['user']['s'] }}" readonly>
+                    </div>
+                    <div class="input-container">
+                        <label>Date Filed</label>
+                        <input class="input date-file" type="date" readonly>
+                    </div>
+                </div>
+                
+                <div>
+                    <div class="input-container">
+                        <label>Specific Location</label>
+                        <input class="input" type="text" placeholder="Specific Location">
+                       
+                    </div>
+                    <div class="input-container">
+                        <label>Request Type</label>
+                        <select >
+                            <option value="0">-- Request Type --</option>
+                            <option value="1">Urgent</option>
+                            <option value="2">Normal</option>
+                        </select>
+                    </div>
+                    
+                </div>
+            </div>
+            <div>
+                <div class="input-container">
+                    <label>Work details</label>
+                    <input type="file" id="img" name="img" accept="image/*">
+                   <textarea aria-expanded="false"></textarea>
+                   
+                </div>
+                <div class="input-container">
+                    <label>Materials Needed</label>
+                   
+                   <textarea aria-expanded="false"></textarea>
+                   
+                </div>
+            </div>
+            <div class="flex-justify-between">
+                <div class="approval-container">
+                    <label>Requested By</label>
+                   <label>{{ session['user']['n']}}</label>
+                    <hr>
+                    <label>Employee</label>
+                </div>
+                <div class="approval-container">
+                    <label>Reviewed By</label>
+                    <label>{ Supervisor / Manager }</label>
+                    <hr>
+                    <label>Supervisor / Manager</label>
+                </div>
+                <div class="approval-container">
+                    <label>Approved By</label>
+                    <label>Ms. May Crisostomo</label>
+                    <hr>
+                    <label>HR Head</label>
+                </div>
+            </div>
+        </form>
+        
+    </div>
+</div>
+{% endblock %}
